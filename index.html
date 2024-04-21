@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Social Media</title>
+    <style>
+        /* Basic styling */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #333;
+        }
+        .photo {
+            width: 100%;
+            max-width: 600px;
+            margin-bottom: 20px;
+        }
+        .heart-icon {
+            color: #ff0000; /* Changed to red */
+            transition: color 0.3s;
+        }
+        .heart-icon.active {
+            color: #ff0000; /* Remains red when active */
+        }
+        .like-counter {
+            color: #333; /* Dark text color */
+        }
+        .comment-section {
+            margin-top: 20px;
+        }
+        .comment {
+            margin-bottom: 10px;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            color: #333; /* Dark text color */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>My Awesome Photos</h1>
+        <img class="photo" src="https://via.placeholder.com/600x400" alt="A beautiful photo">
+        <button class="heart-icon">&#10084;</button>
+        <span class="like-counter">0 likes</span>
+        <div class="comment-section">
+            <div class="comment">
+                <strong>User1:</strong> Beautiful!
+            </div>
+            <div class="comment">
+                <strong>User2:</strong> Love it!
+            </div>
+            <!-- Add more comments here -->
+        </div>
+    </div>
+    <div class="footer">
+        &copy; 2024 My Social Media | <a href="#">Twitter</a> | <a href="#">Instagram</a>
+    </div>
+    <script>
+        const heartButton = document.querySelector('.heart-icon');
+        const likeCounter = document.querySelector('.like-counter');
+        let likes = 0;
+
+        heartButton.addEventListener('click', () => {
+            heartButton.classList.toggle('active');
+            likes += heartButton.classList.contains('active') ? 1 : -1;
+            likeCounter.textContent = `${likes} ${likes === 1 ? 'like' : 'likes'}`;
+        });
+    </script>
+</body>
+</html>
